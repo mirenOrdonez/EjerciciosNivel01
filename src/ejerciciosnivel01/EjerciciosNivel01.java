@@ -87,24 +87,14 @@ public class EjerciciosNivel01 {
         cadena = cadena.toUpperCase();
         cadena = quita(cadena);
         
-        int letra = 0;
-        int posicion = letra++;
-        
-        while (cadena.charAt(letra) != cadena.charAt(posicion)) {
-            posicion++;
-            if (posicion == cadena.length()) {
-            letra++;
-            posicion++;
+        for (int i = 0; i < cadena.length(); i++) {
+            for (int j = i+1; j < cadena.length(); j++) {
+               if (cadena.charAt(i) == cadena.charAt(j)) {
+                   return false;
+               }
             }
-        } 
-        
-        if (letra == cadena.length()) {
-            return true;
         }
-        else {
-            return false;
-        }
-        
+        return true;
     }
     
     
